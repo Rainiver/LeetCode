@@ -15,9 +15,11 @@ class Solution(object):
         def depth(root):
             if not root:
                 return 0
-            self.max_diameter = max(self.max_diameter, depth(root.left)+depth(root.right))
+            left_depth = depth(root.left)
+            right_depth = depth(root.right)
+            self.max_diameter = max(self.max_diameter, left_depth + right_depth)
         
-            return max(depth(root.left), depth(root.right)) + 1
+            return max(left_depth, right_depth) + 1
         
         depth(root)
         return self.max_diameter
