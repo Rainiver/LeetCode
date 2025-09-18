@@ -7,13 +7,13 @@ class Solution(object):
         """
         l = 0
         r = len(nums) - 1
-        while l < r:
+        while l <= r:
             mid = (l+r)//2
             if nums[mid] < target:
                 l = mid + 1
-            if nums[mid] > target:
+            elif nums[mid] > target:
                 r = mid - 1
-            if nums[mid] == target:
+            else: 
                 return mid
             
-        return l+1
+        return l
