@@ -19,7 +19,7 @@ class Solution(object):
         # 步骤2：确定目标所在的升序区间
         if target >= nums[0]:
             # 当pivot=0时（未旋转），左区间应为整个数组
-            search_l, search_r = 0, len(nums) if pivot==0 else pivot
+            search_l, search_r = 0, len(nums)-1 if pivot==0 else pivot-1
         else:
             search_l, search_r = pivot, len(nums) - 1
         # step3: 普通区间用二分查找
