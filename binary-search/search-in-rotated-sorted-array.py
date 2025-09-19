@@ -18,7 +18,8 @@ class Solution(object):
         
         # 步骤2：确定目标所在的升序区间
         if target >= nums[0]:
-            search_l, search_r = 0, pivot
+            # 当pivot=0时（未旋转），左区间应为整个数组
+            search_l, search_r = 0, len(nums) if pivot==0 else pivot
         else:
             search_l, search_r = pivot, len(nums) - 1
         # step3: 普通区间用二分查找
