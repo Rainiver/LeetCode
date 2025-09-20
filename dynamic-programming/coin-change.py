@@ -11,7 +11,8 @@ class Solution(object):
         dp[0] = 0
         for i in range(1, amount+1):
             for coin in coins:
-                dp[i] = min(dp[i-coin]+1, dp[i])
+                if coin <= i:
+                    dp[i] = min(dp[i-coin]+1, dp[i])
         
         # 注意如果凑不出来的话表示dp数组没有更新，返回-1
         
