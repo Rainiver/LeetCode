@@ -6,8 +6,8 @@ class Solution(object):
         """
         # dp[i] 考虑下标i以及之前的最大product
         n = len(nums)
-        dp = [float('-inf')] * n
-        dp[0] = nums[0]
+        dp = nums
+        # dp[0] = nums[0]
         ans = dp[0]
         for i in range(1, n):
             dp[i] = max(dp[i], dp[i-1]*nums[i])
