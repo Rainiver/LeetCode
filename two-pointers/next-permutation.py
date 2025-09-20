@@ -10,10 +10,12 @@ class Solution(object):
             if nums[i-1] < nums[i]:
                 pivot = i - 1
                 break
+        
         if pivot >= 0 :
             for i in range(n-1, pivot, -1):
                 if nums[i] > nums[pivot]:
                     nums[i], nums[pivot] = nums[pivot], nums[i]
+                    break   # 关键：交换后立即退出循环，避免多次交换
 
         l, r = pivot + 1, n-1
         while l < r:
