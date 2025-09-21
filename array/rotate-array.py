@@ -7,7 +7,7 @@ class Solution(object):
         """
         # 3次旋转法，1:翻转整个数组；2:翻转前k个；3:翻转后n-k个
         n = len(nums)
-        
+        k = k % n
         def reverse(nums, l, r):
             while l < r:
                 nums[l], nums[r] = nums[r], nums[l]
