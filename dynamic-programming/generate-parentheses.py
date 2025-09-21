@@ -15,7 +15,7 @@ class Solution(object):
             if l < n:
                 dfs(l+1, r, path+"(")
                 # path自动恢复为原来的，无需手动回溯
-            if  r < l:
+            if  l<=n and r < l:
                 dfs(l, r+1, path+")")
                 # path自动恢复为原来的，无需手动回溯
 
