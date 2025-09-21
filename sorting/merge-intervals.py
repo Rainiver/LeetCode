@@ -13,7 +13,7 @@ class Solution(object):
         for i in range(1, n):
             # 有重叠部分，合并区间
             if intervals[i][0] <= r:
-                r = intervals[i][1]
+                r = max(r, intervals[i][1])
             # 无重叠部分，左右边界加入答案并更新
             else:
                 ans.append([l,r])
