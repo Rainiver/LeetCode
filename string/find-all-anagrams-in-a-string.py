@@ -14,7 +14,7 @@ class Solution(object):
         l, r = 0, n_p-1
         n = len(s)
         if n_p > n:
-            return
+            return ans
         for i in range(n_p):
             s_count[ord(s[i])-ord("a")] += 1
         if s_count == p_count:
