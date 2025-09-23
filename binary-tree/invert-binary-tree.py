@@ -14,7 +14,7 @@ class Solution(object):
             return root
 
         def dfs(node, left, right):
-            if not node.left or not node.right:
+            if not node.left and not node.right:
                 return
             
             # 交换左右节点，如何实现交换左右子树？
