@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: None Do not return anything, modify nums in-place instead.
         """
         n = len(nums)
-        if n == 0:
+        if n == 1:
             return nums
         l, r = 0, 0
         while r < len(nums):
