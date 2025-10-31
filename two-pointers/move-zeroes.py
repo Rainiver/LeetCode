@@ -13,8 +13,7 @@ class Solution(object):
                 r += 1
             if r < len(nums) and nums[l] == 0 and nums[r] != 0:
                 nums[l], nums[r] = nums[r], nums[l]
-                l += 1
-                r += 1
-            else:
-                r += 1
+            l += 1
+            r += 1
+            
         return nums
