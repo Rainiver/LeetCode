@@ -15,4 +15,6 @@ class Solution(object):
                 nums[l], nums[r] = nums[r], nums[l]
                 l += 1
                 r += 1
+            else:
+                r += 1
         return nums
