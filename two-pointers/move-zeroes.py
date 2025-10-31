@@ -4,16 +4,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        left, right = 0, 0
-        while right < len(nums):
-            if nums[right] == 0:
-                right += 1
-            else:
-                nums[left] = nums[right]
-                left += 1
-                right += 1
-        
-        while left < len(nums):
-            nums[left] = 0
-            left += 1
-        
+        n = len(nums)
+        if n == 0:
+            return nums
+        l, r = 0, 0
+        while r < len(nums):
+            while r < len(nums) and nums[r] == 0:
+                r += 1
+            if r < len(nums) and nums[l] == 0 and nums[r] != 0:
+                nums[l], nums[r] = nums[r], nums[l]
+                l += 1
+                r += 1
+        return nums
