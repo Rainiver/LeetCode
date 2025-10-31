@@ -12,7 +12,7 @@ class Solution(object):
         l, r = intervals[0][0], intervals[0][1]
         for i in range(1, n):
             if intervals[i][0] <= r:
-                r = intervals[i][1]
+                r = max(r, intervals[i][1])
             else:
                 ans.append([l, r])
                 l = intervals[i][0]
