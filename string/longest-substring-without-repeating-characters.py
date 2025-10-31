@@ -4,7 +4,8 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-
+        if len(s) == 0:
+            return 0
         l, r = 0, 0
         ans = 1
         pos = [0] * 128
