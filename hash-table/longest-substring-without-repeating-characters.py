@@ -12,8 +12,9 @@ class Solution(object):
         for char in s:
             char_ord = ord(char)
             
-            l = max(l, pos[char_ord])
+            l = max(l, pos[char_ord]+1)
             pos[char_ord] = r
-            ans = max(ans, r - l)
+            ans = max(ans, r - l+1)
             r += 1
+            
         return ans
