@@ -8,7 +8,7 @@ class Solution(object):
             return 0
         l, r = 0, 0
         ans = 1
-        pos = [0] * 128
+        pos = [-1] * 128
         for char in s:
             char_ord = ord(char)
             
