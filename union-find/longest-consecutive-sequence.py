@@ -6,7 +6,7 @@ class Solution(object):
         """
         num_set = set(nums)
         ans = 0
-        for num in nums:
+        for num in num_set:
             if num-1 not in num_set:
                 cur = 0
                 while num in num_set:
