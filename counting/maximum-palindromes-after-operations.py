@@ -17,8 +17,7 @@ class Solution:
 
         total_pair = 0
         for key, value in hashmap.items():
-            if value % 2 == 0:
-                total_pair += value // 2
+            total_pair += value // 2
         ans = 0
         for length in lengths:
             pair_needs = length // 2
