@@ -25,6 +25,8 @@ class Solution:
             if total_pair >= pair_needs:
                 total_pair -= pair_needs
                 ans += 1
+            else:
+                break
 
         return ans
         
