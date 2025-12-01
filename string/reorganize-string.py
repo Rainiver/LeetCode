@@ -17,12 +17,14 @@ class Solution:
         for key, value in hashmap.items():
             heapq.heappush(heap, (-value, key)) 
         time = 0
+
         while heap or queue:
-            time += 1
-            
+            time += 1 
+            flag = False
             while queue and queue[0][2] == time:
                 char, freq, t = queue.popleft()
-                heapq.heappush(heap, (-freq, char))
+                heapq.heappush(heap, (freq, char))
+                flag = True
                 
             if heap:
                 freq, char = heapq.heappop(heap)
@@ -30,6 +32,10 @@ class Solution:
                 freq += 1
                 if freq < 0:
                     queue.append((char, freq, time + 2))
+                flag = True
+                
+            if not flag:
+                return ""
                 
         if len(res) == len(s):
             return res   
