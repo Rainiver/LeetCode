@@ -6,12 +6,14 @@ class Solution:
         pre_map = {0: 1}
         for i in range(n):
             prefix += nums[i]
+            target = prefix - k
+            if target in pre_map:
+                ans += pre_map[target]
             if prefix not in pre_map:
                 pre_map[prefix] = 1
             else:
                 pre_map[prefix] += 1
-            target = prefix - k
-            if target in pre_map:
-                ans += pre_map[target]
+            
+            
         return ans
         
