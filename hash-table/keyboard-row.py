@@ -13,8 +13,9 @@ class Solution:
             hashmap[char] = 3
         
         for word in words:
+            check = True
             for i in range(1, len(word)):
-                check = True
+                
                 if hashmap[word[i].lower()] != hashmap[word[i-1].lower()]:
                     check = False
                     break
