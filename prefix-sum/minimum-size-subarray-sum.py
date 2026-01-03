@@ -2,7 +2,7 @@ class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         n = len(nums)
         min_len = float('inf')  
-        l = 0  
+        l = 0
         current_sum = 0  
         
         for r in range(n):
