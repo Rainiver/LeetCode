@@ -20,9 +20,13 @@ class Solution:
             cur.next = pre
             pre = cur
             cur = tmp
-        if left > 1:
+        if left == 1:
+            start = pre
+            end.next = cur
+            return start
+        else:
             hl.next = pre
-        end.next = cur
+            end.next = cur
       
         return head
         
