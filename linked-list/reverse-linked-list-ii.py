@@ -20,7 +20,8 @@ class Solution:
             cur.next = pre
             pre = cur
             cur = tmp
-        hl.next = pre
+        if left > 1:
+            hl.next = pre
         end.next = cur
       
         return head
