@@ -37,18 +37,18 @@ class LRUCache:
         if key not in self.cache:
             cur = DLinkedList(key, value)
             self.cache[key] = cur
-            # 把node添加到双向链表的末尾（tail 之前）
-            self.move_to_end(cur)
-            if len(self.cache) > self.capacity:
-            
-                node = self.head.next # 最前面要删除的节点
-                del self.cache[node.key]
-                self.head.next = self.head.next.next
-                self.head.next.pre = self.head
         else:
             self.cache[key].val = value
-              
-    
+            # 把node添加到双向链表的末尾（tail 之前）
+        cur = self.cache[key]
+        self.move_to_end(cur)
+        if len(self.cache) > self.capacity:
+            
+            node = self.head.next # 最前面要删除的节点
+            del self.cache[node.key]
+            self.head.next = self.head.next.next
+            self.head.next.pre = self.head
+           
     def move_to_end(self,node):
         self.tail.pre.next = node
         node.pre = self.tail.pre
