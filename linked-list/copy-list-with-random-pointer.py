@@ -10,6 +10,8 @@ class Node:
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
         cur = head
+        if not head:
+            return head
         hashmap = {}
         while cur:
             hashmap[cur] = Node(cur.val)
