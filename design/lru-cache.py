@@ -39,7 +39,12 @@ class LRUCache:
             self.cache[key] = cur
         else:
             self.cache[key].val = value
-            # 把node添加到双向链表的末尾（tail 之前）
+            # 把原本对应的node删除
+            cur = self.cache[key]
+            cur.pre.next = cur.next
+            cur.next.pre = cur.pre
+        
+        # 把node添加到双向链表的末尾（tail 之前）
         cur = self.cache[key]
         self.move_to_end(cur)
         if len(self.cache) > self.capacity:
