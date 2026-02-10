@@ -7,6 +7,8 @@
 from collections import deque
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
         queue = deque([root])
         res = 0
         while queue:
